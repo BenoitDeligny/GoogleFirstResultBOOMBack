@@ -2,6 +2,7 @@ package com.hackathon.GoogleFirstResultBOOMBack.webservices.user;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.hackathon.GoogleFirstResultBOOMBack.webservices.prescription.Prescription;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class User {
     private String email;
 
     @Column(nullable = false)
+    @Type(type = "date")
     private Date birthdate;
 
     @JsonManagedReference
