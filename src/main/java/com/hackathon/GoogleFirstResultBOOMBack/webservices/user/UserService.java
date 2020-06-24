@@ -29,6 +29,7 @@ public class UserService {
         updatedUser.setFirstname(user.getFirstname());
         updatedUser.setEmail(user.getEmail());
         updatedUser.setBirthdate(user.getBirthdate());
+        updatedUser.setPrescriptions(user.getPrescriptions());
 
         return repository.save(updatedUser);
     }

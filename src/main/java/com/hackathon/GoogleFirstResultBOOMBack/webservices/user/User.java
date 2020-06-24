@@ -1,10 +1,12 @@
 package com.hackathon.GoogleFirstResultBOOMBack.webservices.user;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.hackathon.GoogleFirstResultBOOMBack.webservices.prescription.Prescription;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class User {
@@ -24,10 +26,9 @@ public class User {
     @Column(nullable = false)
     private Date birthdate;
 
-    /*@Column(nullable = false)
     @JsonManagedReference
     @OneToMany(mappedBy = "user")
-    private List<Ordonnance> = new ArrayList();*/
+    private List<Prescription> prescriptions = new ArrayList();
 
     public User() {
     }
@@ -70,5 +71,13 @@ public class User {
 
     public void setBirthdate(Date birthdate) {
         this.birthdate = birthdate;
+    }
+
+    public List<Prescription> getPrescriptions() {
+        return prescriptions;
+    }
+
+    public void setPrescriptions(List<Prescription> prescriptions) {
+        this.prescriptions = prescriptions;
     }
 }
