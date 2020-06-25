@@ -23,6 +23,11 @@ public class UserController {
         return service.getUserById(id);
     }
 
+    @GetMapping("/{lastname}")
+    public ApplicationUser getUserByLastname(@RequestParam String lastname) {
+        return service.getUserByLastname(lastname);
+    }
+
     @PostMapping
     public ApplicationUser postUser(@RequestBody ApplicationUser user) {
         return service.saveUser(user);

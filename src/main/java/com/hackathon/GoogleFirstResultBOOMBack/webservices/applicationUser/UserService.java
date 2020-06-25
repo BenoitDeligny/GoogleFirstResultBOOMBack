@@ -18,6 +18,10 @@ public class UserService {
         return repository.findById(id).get();
     }
 
+    public ApplicationUser getUserByLastname(String lastname) {
+        return repository.findByLastname(lastname);
+    }
+
     public ApplicationUser saveUser(ApplicationUser user) {
         return repository.save(user);
     }
