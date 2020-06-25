@@ -16,6 +16,9 @@ public class User {
     private Long id;
 
     @Column(nullable = false)
+    private String Username;
+
+    @Column(nullable = false)
     private String firstname;
 
     @Column(nullable = false)
@@ -44,6 +47,14 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getUsername() {
+        return Username;
+    }
+
+    public void setUsername(String username) {
+        Username = username;
     }
 
     public String getFirstname() {
