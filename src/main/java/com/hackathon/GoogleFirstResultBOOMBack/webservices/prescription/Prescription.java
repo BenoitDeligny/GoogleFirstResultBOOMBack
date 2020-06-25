@@ -3,7 +3,7 @@ package com.hackathon.GoogleFirstResultBOOMBack.webservices.prescription;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.hackathon.GoogleFirstResultBOOMBack.webservices.drug.Drug;
-import com.hackathon.GoogleFirstResultBOOMBack.webservices.user.ApplicationUser;
+import com.hackathon.GoogleFirstResultBOOMBack.webservices.applicationUser.ApplicationUser;
 
 import javax.persistence.*;
 import java.util.ArrayList;

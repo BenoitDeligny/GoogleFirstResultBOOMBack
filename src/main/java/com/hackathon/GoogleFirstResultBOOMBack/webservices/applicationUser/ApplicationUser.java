@@ -1,4 +1,4 @@
-package com.hackathon.GoogleFirstResultBOOMBack.webservices.user;
+package com.hackathon.GoogleFirstResultBOOMBack.webservices.applicationUser;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.hackathon.GoogleFirstResultBOOMBack.webservices.prescription.Prescription;

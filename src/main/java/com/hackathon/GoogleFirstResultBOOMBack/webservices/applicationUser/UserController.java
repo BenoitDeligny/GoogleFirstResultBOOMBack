@@ -1,4 +1,4 @@
-package com.hackathon.GoogleFirstResultBOOMBack.webservices.user;
+package com.hackathon.GoogleFirstResultBOOMBack.webservices.applicationUser;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

@@ -37,11 +37,12 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .and().exceptionHandling()
                 .and().anonymous()
                 .and().authorizeRequests()
-                .antMatchers("*", "/**").permitAll();
-//                .addFilter(new JWTAuthenticationFilter(authenticationManager()))
-//                .addFilter(new JWTAuthorizationFilter(authenticationManager()))
-//                // this disables session creation on Spring Security
-//                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                .antMatchers("*", "/login").permitAll()
+                .antMatchers("*", "/**").permitAll().and()
+                .addFilter(new JWTAuthenticationFilter(authenticationManager()))
+                .addFilter(new JWTAuthorizationFilter(authenticationManager()))
+                // this disables session creation on Spring Security
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.hackathon.GoogleFirstResultBOOMBack.webservices.user;
+package com.hackathon.GoogleFirstResultBOOMBack.webservices.applicationUser;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

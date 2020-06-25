@@ -1,7 +1,7 @@
 package com.hackathon.GoogleFirstResultBOOMBack.security;
 
-import com.hackathon.GoogleFirstResultBOOMBack.webservices.user.ApplicationUser;
-import com.hackathon.GoogleFirstResultBOOMBack.webservices.user.UserRepository;
+import com.hackathon.GoogleFirstResultBOOMBack.webservices.applicationUser.ApplicationUser;
+import com.hackathon.GoogleFirstResultBOOMBack.webservices.applicationUser.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
