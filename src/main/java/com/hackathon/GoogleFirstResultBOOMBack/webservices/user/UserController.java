@@ -1,6 +1,7 @@
 package com.hackathon.GoogleFirstResultBOOMBack.webservices.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 public class UserController {
 
     @Autowired UserService service;
+    @Autowired BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @GetMapping
     public List<User> getUsers() {
@@ -24,6 +26,12 @@ public class UserController {
     @PostMapping
     public User postUser(@RequestBody User user) {
         return service.saveUser(user);
+    }
+
+    @PostMapping("/sign-up")
+    public void signup(@RequestBody User user) {
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        service.saveUser(user);
     }
 
     @PutMapping("/{id}")

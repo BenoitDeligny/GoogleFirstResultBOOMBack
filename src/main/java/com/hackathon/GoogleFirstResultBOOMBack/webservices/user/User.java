@@ -28,6 +28,9 @@ public class User {
     @Type(type = "date")
     private Date birthdate;
 
+    @Column(nullable = false)
+    private String password;
+
     @JsonManagedReference
     @OneToMany(mappedBy = "user")
     private List<Prescription> prescriptions = new ArrayList();
@@ -81,5 +84,13 @@ public class User {
 
     public void setPrescriptions(List<Prescription> prescriptions) {
         this.prescriptions = prescriptions;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
