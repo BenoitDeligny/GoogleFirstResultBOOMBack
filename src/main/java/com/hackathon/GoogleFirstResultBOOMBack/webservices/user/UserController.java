@@ -14,28 +14,28 @@ public class UserController {
     @Autowired BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @GetMapping
-    public List<User> getUsers() {
+    public List<ApplicationUser> getUsers() {
         return service.getUsers();
     }
 
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable Long id) {
+    public ApplicationUser getUserById(@PathVariable Long id) {
         return service.getUserById(id);
     }
 
     @PostMapping
-    public User postUser(@RequestBody User user) {
+    public ApplicationUser postUser(@RequestBody ApplicationUser user) {
         return service.saveUser(user);
     }
 
     @PostMapping("/sign-up")
-    public void signup(@RequestBody User user) {
+    public void signup(@RequestBody ApplicationUser user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         service.saveUser(user);
     }
 
     @PutMapping("/{id}")
-    public User updateUser(@RequestBody User user, @PathVariable Long id) {
+    public ApplicationUser updateUser(@RequestBody ApplicationUser user, @PathVariable Long id) {
         return service.updateUser(user, id);
     }
 
