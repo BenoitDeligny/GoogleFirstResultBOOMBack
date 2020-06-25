@@ -3,7 +3,7 @@ package com.hackathon.GoogleFirstResultBOOMBack.webservices.prescription;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.hackathon.GoogleFirstResultBOOMBack.webservices.medicine.Medicine;
-import com.hackathon.GoogleFirstResultBOOMBack.webservices.user.User;
+import com.hackathon.GoogleFirstResultBOOMBack.webservices.user.ApplicationUser;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public class Prescription {
 
     @JsonBackReference
     @ManyToOne
-    private User user;
+    private ApplicationUser user;
 
     @OneToMany(mappedBy = "prescription")
     @JsonManagedReference
@@ -58,11 +58,11 @@ public class Prescription {
         this.author = author;
     }
 
-    public User getUser() {
+    public ApplicationUser getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(ApplicationUser user) {
         this.user = user;
     }
 

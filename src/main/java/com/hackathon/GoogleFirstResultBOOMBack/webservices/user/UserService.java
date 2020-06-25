@@ -10,20 +10,20 @@ public class UserService {
 
     @Autowired UserRepository repository;
 
-    public List<User> getUsers() {
+    public List<ApplicationUser> getUsers() {
         return repository.findAll();
     }
 
-    public User getUserById(Long id) {
+    public ApplicationUser getUserById(Long id) {
         return repository.findById(id).get();
     }
 
-    public User saveUser(User user) {
+    public ApplicationUser saveUser(ApplicationUser user) {
         return repository.save(user);
     }
 
-    public User updateUser(User user, Long id) {
-        User updatedUser = repository.findById(id).get();
+    public ApplicationUser updateUser(ApplicationUser user, Long id) {
+        ApplicationUser updatedUser = repository.findById(id).get();
 
         updatedUser.setUsername(user.getUsername());
         updatedUser.setLastname(user.getLastname());

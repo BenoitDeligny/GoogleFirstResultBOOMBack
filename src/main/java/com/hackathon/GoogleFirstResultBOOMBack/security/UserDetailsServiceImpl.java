@@ -1,8 +1,9 @@
 package com.hackathon.GoogleFirstResultBOOMBack.security;
 
-import com.hackathon.GoogleFirstResultBOOMBack.webservices.user.User;
+import com.hackathon.GoogleFirstResultBOOMBack.webservices.user.ApplicationUser;
 import com.hackathon.GoogleFirstResultBOOMBack.webservices.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -13,11 +14,12 @@ import static java.util.Collections.emptyList;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService{
 
-    @Autowired UserRepository repository;
+    @Autowired
+    UserRepository repository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = repository.findByUsername(username);
+        ApplicationUser user = repository.findByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException(username);
         }

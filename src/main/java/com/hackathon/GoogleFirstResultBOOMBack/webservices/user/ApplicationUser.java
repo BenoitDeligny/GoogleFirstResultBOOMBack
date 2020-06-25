@@ -10,13 +10,13 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-public class User {
+public class ApplicationUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String Username;
+    private String username;
 
     @Column(nullable = false)
     private String firstname;
@@ -38,7 +38,7 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Prescription> prescriptions = new ArrayList();
 
-    public User() {
+    public ApplicationUser() {
     }
 
     public Long getId() {
@@ -50,11 +50,11 @@ public class User {
     }
 
     public String getUsername() {
-        return Username;
+        return username;
     }
 
     public void setUsername(String username) {
-        Username = username;
+        this.username = username;
     }
 
     public String getFirstname() {
@@ -89,19 +89,19 @@ public class User {
         this.birthdate = birthdate;
     }
 
-    public List<Prescription> getPrescriptions() {
-        return prescriptions;
-    }
-
-    public void setPrescriptions(List<Prescription> prescriptions) {
-        this.prescriptions = prescriptions;
-    }
-
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Prescription> getPrescriptions() {
+        return prescriptions;
+    }
+
+    public void setPrescriptions(List<Prescription> prescriptions) {
+        this.prescriptions = prescriptions;
     }
 }
