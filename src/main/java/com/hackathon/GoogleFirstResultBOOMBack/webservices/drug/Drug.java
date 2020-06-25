@@ -29,9 +29,8 @@ public class Drug {
     @Column(nullable = false)
     private int takePerDay;
 
-    @ElementCollection
     @Column(nullable = false)
-    private List<String> moments = new ArrayList<String>();
+    private String moments;
 
     @JsonBackReference
     @ManyToOne
@@ -88,11 +87,11 @@ public class Drug {
         this.takePerDay = takePerDay;
     }
 
-    public List<String> getMoments() {
+    public String getMoments() {
         return moments;
     }
 
-    public void setMoments(List<String> moments) {
+    public void setMoments(String moments) {
         this.moments = moments;
     }
 
