@@ -1,4 +1,4 @@
-package com.hackathon.GoogleFirstResultBOOMBack.webservices.medicine;
+package com.hackathon.GoogleFirstResultBOOMBack.webservices.drug;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.hackathon.GoogleFirstResultBOOMBack.webservices.prescription.Prescription;
@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Medicine {
+public class Drug {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -37,7 +37,7 @@ public class Medicine {
     @ManyToOne
     private Prescription prescription;
 
-    public Medicine() {
+    public Drug() {
     }
 
     public Long getId() {

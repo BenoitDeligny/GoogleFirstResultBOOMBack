@@ -1,4 +1,4 @@
-package com.hackathon.GoogleFirstResultBOOMBack.webservices.medicine;
+package com.hackathon.GoogleFirstResultBOOMBack.webservices.drug;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -7,11 +7,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/medicines")
-public class MedicineController {
-    @Autowired MedicineService service;
+public class DrugController {
+    @Autowired
+    DrugService service;
 
     @GetMapping
-    public List<Medicine> getMedicines() {
+    public List<Drug> getMedicines() {
         return service.getMedicines();
     }
 

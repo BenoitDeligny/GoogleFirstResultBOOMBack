@@ -1,4 +1,4 @@
-package com.hackathon.GoogleFirstResultBOOMBack.webservices.medicine;
+package com.hackathon.GoogleFirstResultBOOMBack.webservices.drug;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -6,11 +6,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class MedicineService {
+public class DrugService {
 
-    @Autowired MedicineRepository repository;
+    @Autowired
+    DrugRepository repository;
 
-    public List<Medicine> getMedicines() {
+    public List<Drug> getMedicines() {
         return repository.findAll();
     }
 
