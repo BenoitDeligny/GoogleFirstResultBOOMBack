@@ -27,7 +27,7 @@ public class Prescription {
     @ManyToOne
     private ApplicationUser user;
 
-    @OneToMany(mappedBy = "prescription")
+    @OneToMany(mappedBy = "prescription", cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<Drug> drugs = new ArrayList<>();
 
