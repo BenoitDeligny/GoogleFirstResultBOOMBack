@@ -10,4 +10,4 @@ FROM openjdk:11-jre
 WORKDIR /app
 COPY --from=MAVEN_BUILD /build/target/GoogleFirstResultBOOMBack-0.0.1-SNAPSHOT.jar /app/
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar","-Dspring.profiles.active=prod", "neonoos-api-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar","-Dspring.profiles.active=prod", "GoogleFirstResultBOOMBack-0.0.1-SNAPSHOT.jar"]
