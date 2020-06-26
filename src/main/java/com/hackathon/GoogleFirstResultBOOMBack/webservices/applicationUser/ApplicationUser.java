@@ -15,23 +15,17 @@ public class ApplicationUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
     private String username;
 
-    @Column(nullable = false)
     private String firstname;
 
-    @Column(nullable = false)
     private String lastname;
 
-    @Column(nullable = false)
     private String email;
 
-    @Column(nullable = false)
     @Type(type = "date")
     private Date birthdate;
 
-    @Column(nullable = false)
     private String password;
 
     @JsonManagedReference

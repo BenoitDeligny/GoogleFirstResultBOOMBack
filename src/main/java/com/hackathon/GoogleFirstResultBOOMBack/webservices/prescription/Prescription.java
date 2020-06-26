@@ -17,10 +17,8 @@ public class Prescription {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
     private Date dateCreation;
 
-    @Column(nullable = false)
     private String author;
 
     @JsonBackReference

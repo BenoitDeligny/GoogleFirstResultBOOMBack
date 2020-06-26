@@ -4,9 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.hackathon.GoogleFirstResultBOOMBack.webservices.prescription.Prescription;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 public class Drug {
@@ -14,22 +12,17 @@ public class Drug {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT")
     private String description;
 
-    @Column(nullable = false)
     private Date startingDate;
 
-    @Column(nullable = false)
     private Date endingDate;
 
-    @Column(nullable = false)
     private int takePerDay;
 
-    @Column(nullable = false)
     private String moments;
 
     @JsonBackReference
