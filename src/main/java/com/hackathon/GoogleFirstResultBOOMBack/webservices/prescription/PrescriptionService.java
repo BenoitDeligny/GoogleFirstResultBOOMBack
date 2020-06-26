@@ -3,6 +3,7 @@ package com.hackathon.GoogleFirstResultBOOMBack.webservices.prescription;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -17,6 +18,12 @@ public class PrescriptionService {
 
     public Prescription getPrescriptionById(Long id) {
         return repository.findById(id).get();
+    }
+
+    public Prescription getLastPrescription() {
+        List<Prescription> prescriptions = repository.findAll();
+        Prescription lastPrescription = prescriptions.get(prescriptions.size()-1);
+        return lastPrescription;
     }
 
     public Prescription savePrescription(Prescription prescription) {

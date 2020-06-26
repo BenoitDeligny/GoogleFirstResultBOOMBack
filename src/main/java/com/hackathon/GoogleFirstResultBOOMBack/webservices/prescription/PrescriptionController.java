@@ -22,6 +22,11 @@ public class PrescriptionController {
         return service.getPrescriptionById(id);
     }
 
+    @GetMapping("/last")
+    public Prescription getLastPrescription() {
+        return service.getLastPrescription();
+    }
+
     @PostMapping
     public Prescription postPrescription(@RequestBody Prescription prescription) {
         return service.savePrescription(prescription);
