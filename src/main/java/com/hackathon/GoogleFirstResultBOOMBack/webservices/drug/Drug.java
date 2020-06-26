@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.hackathon.GoogleFirstResultBOOMBack.webservices.prescription.Prescription;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Drug {
@@ -23,7 +25,8 @@ public class Drug {
 
     private int takePerDay;
 
-    private String moments;
+    @ElementCollection
+    private List<String> moments = new ArrayList<>();
 
     @JsonBackReference
     @ManyToOne
@@ -80,11 +83,11 @@ public class Drug {
         this.takePerDay = takePerDay;
     }
 
-    public String getMoments() {
+    public List<String> getMoments() {
         return moments;
     }
 
-    public void setMoments(String moments) {
+    public void setMoments(List<String> moments) {
         this.moments = moments;
     }
 
